@@ -68,6 +68,13 @@ console.log(5 + true + "5") // 65
 
 console.log([] + []) // ""
 
+// output?
+const a = (function() {
+  return parseInt("1.5");
+})()
+
+typeof a;
+
 // Will this work?
 const testString = "hello world";
 const isAllCaps = false;
