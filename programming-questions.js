@@ -67,3 +67,62 @@ console.log(true + 5) // 6
 console.log(5 + true + "5") // 65
 
 console.log([] + []) // ""
+
+// Will this work?
+const testString = "hello world";
+const isAllCaps = false;
+if (testString === testString.toUpperCase()) {
+  isAllCaps = true;
+}
+
+// Console log outputs
+let p1 = new Promise((resolve, reject) => {
+  resolve("foo");
+});
+let p2 = new Promise((resolve, reject) => {
+  reject("bar");
+});
+console.log("bip");
+p1.then((val) => {
+  console.log(val);
+  return p2;
+})
+  .then((val) => {
+    console.log("baz");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+console.log("bop");
+
+// Any error?
+class MyList extends Array {
+  constructor(someArg) {
+    this.someArg = [...someArg];
+  }
+}
+let theList = new MyList("foo");
+
+// Find value
+function foo(obj) {
+  return { a: obj.bar, b: obj.baz };
+}
+const { a } = foo({ bar: 27, baz: 41 });
+
+// what is the output
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 100);
+}
+
+// value of k
+let i = 3;
+let j = 4;
+let k = 1;
+for (i = 0; i < 3; i++) {
+  k += j;
+  j = j - 1;
+}
+
+
